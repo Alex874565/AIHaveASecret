@@ -1,4 +1,5 @@
 import Landing from './static/landing.jsx'
+import Attack from './static/attack.jsx'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -8,8 +9,9 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <BrowserRouter>
-        <Routes>]
+        <Routes>
             <Route path="/" element=<Landing /> />
+            <Route path={"/attack"} element=<Attack /> />
         </Routes>
       </BrowserRouter>
   </StrictMode>,

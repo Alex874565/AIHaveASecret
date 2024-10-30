@@ -1,3 +1,6 @@
+# LLama
+meta-llama/*
+
 # Logs
 logs
 *.log
