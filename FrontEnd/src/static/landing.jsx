@@ -10,11 +10,15 @@ var landing = () => {
 
     return (
         <div id={"landing-page"}>
-            <Navbar />
+            
             <div className="content-wrapper">
+                <h2>Welcome to</h2>
                 <h1>AI Have A Secret</h1>
-                <h4>THE AI Security Game</h4>
-                <h4>Prompt Injection Attack/Defense</h4>
+                <h2>The AI Prompt Injection Attack/Defense Game</h2>
+            </div>
+            <div>
+                <button class="button button_att">Attack AI!</button>
+                <button class="button button_def">Defend my own AI!</button>
             </div>
         </div>);
 }
