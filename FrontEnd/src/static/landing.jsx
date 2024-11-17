@@ -25,7 +25,7 @@ const Landing = () => {
         <a href="/attack">
             <button className="button button_att">Attack AI!</button>
         </a>
-        <a href="/defend">
+        <a href="/defense">
             <button className="button button_def">Defend my own AI!</button>
         </a>
       </div>

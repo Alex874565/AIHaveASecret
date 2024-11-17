@@ -3,6 +3,7 @@ import Attack from './static/attack.jsx';
 import Defense from './static/defense.jsx';
 import Register from "./static/register.jsx";
 import Login from "./static/login.jsx";
+import BuildAi from "./static/build-ai.jsx";
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
             <Route path={"/defense"} element=<Defense /> />
             <Route path={"/register"} element=<Register /> />
             <Route path={"/login"} element=<Login /> />
+            <Route path={"/build-ai"} element=<BuildAi /> />
         </Routes>
       </BrowserRouter>
   </StrictMode>,
