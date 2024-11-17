@@ -5,6 +5,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
+
+    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
+    background-repeat:no-repeat;
+    overflow-y: scroll;
 
     & .content-wrapper {
         color: black;
@@ -14,6 +19,45 @@
         align-items: center;
         height: 100%;
         width: 100%;
+        margin-top: 200px;
+
+        .level-select-container {
+            margin-bottom: 20px;
+        }
+        
+        /* Tutorial message styles */
+.tutorial-message {
+    text-align: center;
+    color: #f0f0f0;
+    
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    
+    margin-top: 150px;
+}
+
+.tutorial-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.tutorial-message p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+}
+
+
+        .level-select {
+            padding: 10px;
+            margin-top: 0px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+        }
 
         & a {
             padding: .75rem 1rem;
@@ -30,4 +74,6 @@
             }
         }
     }
+
+   
 }
