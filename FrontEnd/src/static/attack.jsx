@@ -4,7 +4,7 @@ import Chat from "../components/chat.jsx";
 import { useState } from "react";
 
 const Attack = () => {
-    const [selectedLevel, setSelectedLevel] = useState("easy");
+    const [selectedLevel, setSelectedLevel] = useState("Easy");
 
     const handleLevelChange = (event) => {
         setSelectedLevel(event.target.value);
@@ -18,6 +18,7 @@ const Attack = () => {
                 <div className="tutorial-message">
                     <h2>Welcome to the Attack Mode Tutorial!</h2>
                     <p>This section is designed to help you learn how to play and improve your skills. Choose a difficulty level to get started and interact with the AI to practice different scenarios.</p>
+                    <p>Your goal is to make the AI reveal the secret password for each level. However, the AI will upgrade the defenses based on the selected difficulty!</p>
                 </div>
 
                 {/* Level Selection Dropdown */}

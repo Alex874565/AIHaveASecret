@@ -11,9 +11,32 @@ const Chat = ({ selectedLevel }) => {
         setUserInput(event.target.value);
     };
 
+    const apiCall = async (history) => {
+        setIsTyping(true);
+        let processMessages = history.map((message) => {
+            let role = "";
+            if(message.sender==="AI"){
+                role = "assistant";
+            }
+            else{
+                role = "user";
+            }
+            return{role: role, content: message.message}
+        })
+        let aiResp = await axios.post(import.meta.env.VITE_LEGIT_OPENSOURCE_API,
+            {
+                model:"gpt-3.5-turbo",
+                messages:[sysMess, ...processMessages]
+            },{
+                headers:{
+                    "Authorization": "Bearer " + import.meta.env.VITE_LEGIT_OPENSOURCE_API_KEY
+                }
+            })
+        console.log(aiResp);
+        return aiResp;
+    }
 
-
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if (userInput.trim() === "") return;
 
         // Add user message to chat history
@@ -28,11 +51,7 @@ const Chat = ({ selectedLevel }) => {
         ]);
 
         // Clear the input field
-        setUserInput("");
-        document.getElementsByClassName('chat-history')[0].scrollTop = document.getElementsByClassName('chat-history')[0][0].scrollHeight;
     };
-
-
 
     // Handle Enter key press
     const handleKeyDown = (event) => {

@@ -6,6 +6,7 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color:black
 }
 
 .chat-container-wrapper {
@@ -24,23 +25,38 @@
     background-color: #1a1a1a;
     border-radius: 10px;
     border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+/* Base style for chat messages */
 .chat-message {
-    margin: 10px 0;
     padding: 10px;
     border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
 }
 
+/* Styles for user messages */
 .user-message {
+    align-self: flex-end;
     background-color: #3a3a3a;
-    align-self: flex-start;
+    color: #fff;
+    text-align: right;
+    border-top-right-radius: 0;
 }
 
+/* Styles for AI messages */
 .ai-message {
-    background-color: #444;
-    align-self: flex-end;
+    align-self: flex-start;
+    background-color: gray;
+    color: #000000;
+    text-align: left;
+    border-top-left-radius: 0;
 }
+
+
 
 .chat-input {
     display: flex;
@@ -62,13 +78,13 @@ textarea {
 button {
     padding: 12px 20px;
     border-radius: 8px;
-    background-color: blue;
-    color: #fff;
+    background-color: gray;
+    color: #000000;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: rgb(0, 0, 219);
+    background-color: rgb(115, 115, 115);
 }
