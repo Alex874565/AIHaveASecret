@@ -21,6 +21,16 @@ const aiSchema = new mongoose.Schema({
     hints: {
         type: String,
         required: false
+    },
+    total_attacks: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+    successful_attacks: {
+        type: Number,
+        required: false,
+        default: 0
     }
 });
 
