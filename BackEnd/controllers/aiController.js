@@ -9,18 +9,18 @@ function createAI(req, res){
         hints: req.body.hints
     });
     ai.save().then(function(){
-        res.status(201).json({message: "AI created"})
+        res.status(201).json({success: "AI created"})
     }).catch(function(err){
-        res.status(400).json({message: err.message})
+        res.status(400).json({error: err.message})
     })
 }
 
 function deleteAI(req, res){
     AI.findOneAndDelete({name: req.params.name, creator: req.params.creator}).then(function(ai){
         if(ai){
-            res.status(200).json({message: "AI deleted"})
+            res.status(200).json({success: "AI deleted"})
         }else{
-            res.status(404).json({message: "AI not found"})
+            res.status(404).json({error: "AI not found"})
         }
     }
     ).catch(function(err){
@@ -31,13 +31,13 @@ function deleteAI(req, res){
 function updateAI(req, res){
     AI.findOneAndUpdate({name : req.params.name, creator: req.params.creator}, req.body).then(function(ai){
         if(ai){
-            res.status(200).json({message: "AI updated"})
+            res.status(200).json({success: "AI updated"})
         }else{
-            res.status(404).json({message: "AI not found"})
+            res.status(404).json({error: "AI not found"})
         }
     }
     ).catch(function(err){
-        res.status(400).json({message: err.message})
+        res.status(400).json({error: err.message})
     })
 }
 
