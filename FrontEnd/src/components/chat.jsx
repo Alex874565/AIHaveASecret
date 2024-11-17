@@ -11,6 +11,8 @@ const Chat = ({ selectedLevel }) => {
         setUserInput(event.target.value);
     };
 
+
+
     const handleSubmit = () => {
         if (userInput.trim() === "") return;
 
@@ -27,7 +29,10 @@ const Chat = ({ selectedLevel }) => {
 
         // Clear the input field
         setUserInput("");
+        document.getElementsByClassName('chat-history')[0].scrollTop = document.getElementsByClassName('chat-history')[0][0].scrollHeight;
     };
+
+
 
     // Handle Enter key press
     const handleKeyDown = (event) => {
