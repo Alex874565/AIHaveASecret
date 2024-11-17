@@ -1,0 +1,41 @@
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+
+    & a,div{
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center;
+        align-items: center;
+        background-color: darkgray;
+        height: 100%;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 0;
+        &:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        &:active{
+            background-color: white;
+            color: black;
+        }
+    }
+
+    & a{
+        flex: 1 0 auto;
+        border-right: .35rem solid gray;
+        border-collapse: collapse;
+    }
+
+    & div{
+        flex: .06 0 auto;
+    }
+}
