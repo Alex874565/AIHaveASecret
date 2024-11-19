@@ -23,7 +23,7 @@ var Login = () => {
         }).catch((err) => {
             alert('Invalid username or password');
         })
-        if(res.status === 200 && res.data.user){
+        if(res && res.status === 200 && res.data.user){
             localStorage.setItem('user', JSON.stringify(res.data.user));
             window.location.href = '/';
         }
@@ -38,6 +38,7 @@ var Login = () => {
                 <button onClick={loginApiCall} value={"Login"}>Login</button>
             </div>
             <div id={"auth-errors"}></div>
+            <a id={"register-btn"} href={"/register"}>Register</a>
         </div>
     )
 }

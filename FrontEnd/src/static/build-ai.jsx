@@ -44,19 +44,28 @@ let BuildAi = () => {
         });
     }
 
-    return (
-        <div id={"build-ai-page"}>
-            <h2>Build AI</h2>
-            <div>
-                <input type="text" name="name" placeholder="Name"/>
-                <input type="text" name="description" placeholder="Description"/>
-                <input type="text" name="secret" placeholder="Secret"/>
-                <input type="text" name="hints" placeholder="Hints"/>
-                <button value={"Build AI"} onClick={buildAiApiCall}>Build AI</button>
+    if(localStorage.getItem('user')) {
+        return (
+            <div id={"build-ai-page"}>
+                <h2>Build AI</h2>
+                <div>
+                    <input type="text" name="name" placeholder="Name"/>
+                    <input type="text" name="description" placeholder="Description"/>
+                    <input type="text" name="secret" placeholder="Secret"/>
+                    <input type="text" name="hints" placeholder="Hints"/>
+                    <button value={"Build AI"} onClick={buildAiApiCall}>Build AI</button>
+                </div>
+                <div id={"build-errors"}></div>
             </div>
-            <div id={"build-errors"}></div>
-        </div>
-    )
+        )
+    }else{
+        return (
+            <div className={"login-error"}>
+                <h2>You must be logged in to build an AI</h2>
+                <a href={"/login"}>Login</a>
+            </div>
+        )
+    }
 }
 
 export default BuildAi;

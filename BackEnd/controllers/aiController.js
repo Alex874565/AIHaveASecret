@@ -53,4 +53,28 @@ function findAI(req, res){
     })
 }
 
-module.exports = {createAI, deleteAI, updateAI, findAI};
+function findCreatorAIs(req, res){
+    AI.find({creator: req.params.creator}).then(function(ais){
+        if(ais){
+            res.status(200).json(ais)
+        }else{
+            res.status(404).json({message: "AIs not found"})
+        }
+    }).catch(function(err){
+        res.status(400).json({message: err.message})
+    })
+}
+
+function findAllAIs(req, res){
+    AI.find().then(function(ais){
+        if(ais){
+            res.status(200).json(ais)
+        }else{
+            res.status(404).json({message: "AIs not found"})
+        }
+    }).catch(function(err){
+        res.status(400).json({message: err.message})
+    })
+}
+
+module.exports = {createAI, deleteAI, updateAI, findAI, findCreatorAIs, findAllAIs};
