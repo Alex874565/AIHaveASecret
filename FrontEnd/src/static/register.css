@@ -5,21 +5,118 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #2a2a2a; /* Dark background similar to chat component */
+    padding: 20px;
+    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    & .content-wrapper {
-        color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
+
+.content-wrapper {
+    color: white; /* White text for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    max-width: 600px;
+    background-color: #333; /* Dark background for the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+    padding: 20px;
+    margin: 20px;
+}
+
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#auth-form input {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #444; /* Darker border */
+    font-size: 1rem;
+    background-color: #1a1a1a; /* Dark background for input */
+    color: #fff; /* White text for input */
+}
+
+#auth-form input:focus {
+    border-color: #007bff; /* Focus border color */
+    outline: none;
+    background-color: #333; /* Slightly lighter background on focus */
+}
+
+#auth-form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #444; /* Dark background for button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#auth-form button:hover {
+    background-color: #3d3d3d; /* Darker background on hover */
+}
+
+#auth-errors {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px 0;
+    display: none; /* Initially hidden, will show on error */
+}
+
+#code-form {
+    display: none; /* Initially hidden, will show after email verification */
+    width: 60%;
+}
+
+#code-form input {
+    padding: 12px;
+    margin: 10px 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+#code-form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #28a745; /* Green button for submission */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#code-form button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white; /* White text for headings */
+}
+
+@media (max-width: 768px) {
+    #register-page {
+        padding: 10px;
     }
 
-    & #auth-errors {
-        color: red;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 10px;
+    .content-wrapper {
+        padding: 15px;
     }
+}
 }

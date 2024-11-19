@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import './register.css';
+import Navbar from "../components/navbar.jsx";
 import {showLoader, Loader, hideLoader} from "../components/loader.jsx";
 
 var Register = () => {
@@ -110,6 +111,7 @@ var Register = () => {
     return (
         <div id={"register-page"}>
             <Loader />
+            <Navbar />
             <div className={"content-wrapper"}>
                 <h2>Register</h2>
                 <div id={"auth-form"}>

@@ -27,6 +27,7 @@ createRoot(document.getElementById('root')).render(
             <Route path={"/profile"} element=<Profile /> />
             <Route path={"/leaderboard"} element=<Leaderboard /> />
             <Route path={"/attack-menu"} element=<AttackMenu /> />
+            <Route path={"/attack-custom-ai"} element=<AttackCustomAi /> />
         </Routes>
       </BrowserRouter>
   </StrictMode>,

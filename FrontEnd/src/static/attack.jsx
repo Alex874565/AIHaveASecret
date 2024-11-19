@@ -1,6 +1,7 @@
 import './attack.css';
 import Navbar from "../components/navbar.jsx";
 import Chat from "../components/chat.jsx";
+import SecretInput from "../components/secretinput.jsx";  // Import SecretInput component
 import { useState } from "react";
 
 const Attack = () => {
@@ -32,10 +33,11 @@ const Attack = () => {
                     </select>
                 </div>
 
-                <a id="attack-others" href={"attack-menu"}>Or attack other players</a>
+                {/* Secret Input Component */}
+                <SecretInput selectedLevel={selectedLevel} />
 
                 {/* Chat Component */}
-                <Chat selectedLevel={selectedLevel}/>
+                <Chat selectedLevel={selectedLevel} />
             </div>
         </div>
     );

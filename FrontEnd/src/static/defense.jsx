@@ -24,9 +24,13 @@ var Defense = () => {
                 <div className={"content-wrapper"}>
                     <div className={"auth-redirect"}>
                         <p>Please login or register to access this page.</p>
-                        <div className={"auth-buttons"}>
-                            <a href={'/login'}>Login</a>
-                            <a href={'/register'}>Register</a>
+                        <div className="button-container">
+                            <a href="/login">
+                                <button className="button button_login">Login</button>
+                            </a>
+                            <a href="/register">
+                                <button className="button button_register">Register</button>
+                            </a>
                         </div>
                     </div>
                 </div>
