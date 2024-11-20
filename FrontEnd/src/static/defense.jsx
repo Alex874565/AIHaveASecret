@@ -11,9 +11,7 @@ var Defense = () => {
                 <div className={"content-wrapper"}>
                     <a id={"build-ai"} href={'build-ai'}>Build Your AI</a>
                     <p>OR</p>
-                    <p id={"edit-ais-title"}>Edit your old AIs</p>
-                    <div id={"edit-ais"}>
-                    </div>
+                    <a id={"edit-ais-title"} href={'edit-ais'}>Edit your old AIs</a>
                 </div>
             </div>
         )

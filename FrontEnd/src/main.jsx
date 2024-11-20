@@ -8,6 +8,8 @@ import Profile from "./static/profile.jsx";
 import Leaderboard from "./static/leaderboard.jsx";
 import AttackMenu from "./static/attack-menu.jsx";
 import AttackCustomAi from "./static/attack-custom-ai.jsx";
+import EditAis from "./static/edit-ais.jsx";
+import EditAi from "./static/edit-ai.jsx";
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -27,7 +29,9 @@ createRoot(document.getElementById('root')).render(
             <Route path={"/profile"} element=<Profile /> />
             <Route path={"/leaderboard"} element=<Leaderboard /> />
             <Route path={"/attack-menu"} element=<AttackMenu /> />
-            <Route path={"/attack-custom-ai"} element=<AttackCustomAi /> />
+            <Route path={"/attack-custom-ai/:creator/:name"} element=<AttackCustomAi /> />
+            <Route path={"/edit-ais"} element=<EditAis /> />
+            <Route path={"/edit-ai/:creator/:name"} element=<EditAi /> />
         </Routes>
       </BrowserRouter>
   </StrictMode>,

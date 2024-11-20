@@ -21,7 +21,11 @@ var Register = () => {
             name: username,
             email: email,
             password: password
-        })
+        }).catch((err) => {
+            hideLoader();
+            console.log(err);
+            document.getElementById('auth-errors').style.display = 'block'; document.getElementById('auth-errors').innerText = 'Failed to register'; return false;
+        });
         hideLoader();
         if(!response.data || !response.data.success){
             document.getElementById('auth-errors').style.display = 'block';
@@ -66,7 +70,12 @@ var Register = () => {
         var response = await axios.post('http://127.0.0.1:8001/api/auth/check_user_existence', {
             email: email,
             name: username
-        })
+        }).catch((err) => {
+            console.log(err);
+            document.getElementById('auth-errors').style.display = 'block';
+            document.getElementById('auth-errors').innerText = 'Failed to check user existence';
+            return false;
+        });
         if(!response.data){
             document.getElementById('auth-errors').style.display = 'block';
             document.getElementById('auth-errors').innerText = 'Failed to check user existence';
@@ -92,11 +101,17 @@ var Register = () => {
         response = await axios.post('http://127.0.0.1:8001/api/auth/send_mail', {
             email: email,
             code: tmpCode
+        }).catch((err) => {
+            hideLoader();
+            console.log(err);
+            document.getElementById('auth-errors').style.display = 'block'; document.getElementById('auth-errors').innerText = 'Failed to send email'; return false;
         });
 
         hideLoader();
 
-        alert('Verification code sent to email');
+        if(response.status === 200) {
+            alert('Verification code sent to email');
+        }
 
         if(!response.data || !response.data.success){
             document.getElementById('auth-errors').style.display = 'block';

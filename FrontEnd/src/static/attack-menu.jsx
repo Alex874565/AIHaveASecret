@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import Navbar from "../components/navbar.jsx";
 
 let AttackMenu = () => {
 
@@ -16,10 +17,13 @@ let AttackMenu = () => {
         }
     }
 
-    useEffect(() => {getAis()}, []);
+    useEffect(() => {
+        getAis();
+    }, []);
 
     return (
         <div id={"attack-menu-page"}>
+            <Navbar/>
             <h2>Attack Menu</h2>
             <div id={"attack-menu"}>
                 {ais.map((ai, index) => (
@@ -27,8 +31,9 @@ let AttackMenu = () => {
                         <h3>{ai.name}</h3>
                         <h3>{ai.creator}</h3>
                         <p>{ai.description}</p>
-                        <p>{ai.hints}</p>
-                        <a id={"attack-button"} href={`/attack-custom-ai`}>Attack</a>
+                        <p>Attacks: {ai.total_attacks}</p>
+                        <p>Successful attacks: {ai.successful_attacks}</p>
+                        <a id={"attack-button"} href={`/attack-custom-ai/${ai.creator}/${ai.name}`}>Attack</a>
                     </div>
                 ))}
             </div>

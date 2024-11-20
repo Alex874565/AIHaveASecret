@@ -5,6 +5,7 @@ function createAI(req, res){
         name: req.body.name,
         creator: req.body.creator,
         description: req.body.description,
+        system_prompt: req.body.system_prompt,
         secret: req.body.secret,
         hints: req.body.hints
     });
@@ -55,7 +56,7 @@ function findAI(req, res){
 
 function findCreatorAIs(req, res){
     AI.find({creator: req.params.creator}).then(function(ais){
-        if(ais){
+        if(ais.length > 0){
             res.status(200).json(ais)
         }else{
             res.status(404).json({message: "AIs not found"})

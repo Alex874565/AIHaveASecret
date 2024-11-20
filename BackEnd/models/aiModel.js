@@ -14,6 +14,10 @@ const aiSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    system_prompt: {
+        type: String,
+        required: true
+    },
     secret: {
         type: String,
         required: true
