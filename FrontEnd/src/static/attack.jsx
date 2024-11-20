@@ -34,7 +34,7 @@ const Attack = () => {
                 </div>
 
                 {/* Secret Input Component */}
-                <SecretInput selectedLevel={selectedLevel} />
+                <SecretInput secret={selectedLevel === 'easy' ? "SHAKIRA" : selectedLevel === 'medium' ? 'GUACAMOLE' : 'DESPACITO'} />
 
                 {/* Chat Component */}
                 <Chat selectedLevel={selectedLevel} />

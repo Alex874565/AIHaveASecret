@@ -1,14 +1,19 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import bcrypt from "bcryptjs";
 import Navbar from "../components/navbar.jsx"; // Import the Navbar
 import './profile.css';
 
 let Profile = () => {
+
   let openChangePassword = () => {
     document.getElementById("change-password").style.display = "block";
     document.getElementById("open-change-password").style.display = "none";
     document.getElementById("close-change-password").style.display = "block";
+    const container = document.getElementById("profile-content");
+    if (container) {
+        container.scrollTop = container.scrollHeight; // Forces recalculation.
+    }
   };
 
   let closeChangePassword = () => {
@@ -70,8 +75,8 @@ let Profile = () => {
         
             {/* Main Profile Section */}
             <div id="profile-content">
-            <h2>Profile</h2>
-            <h3>Username: {JSON.parse(localStorage.getItem("user")).name}</h3>
+                <h2>Profile</h2>
+                <h3>Username: {JSON.parse(localStorage.getItem("user")).name}</h3>
                 <h3>Email: {JSON.parse(localStorage.getItem("user")).email}</h3>
                 <h3>Attacks: {JSON.parse(localStorage.getItem("user")).attacks}</h3>
                 <h3>Trophies: {JSON.parse(localStorage.getItem("user")).trophies}</h3>

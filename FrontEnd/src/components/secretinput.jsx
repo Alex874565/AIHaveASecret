@@ -2,28 +2,9 @@
 import './secretinput.css';  // Import the CSS file
 import { useState, useEffect } from "react";
 
-const SecretInput = ({ selectedLevel }) => {
+const SecretInput = ({ secret }) => {
     const [userSecret, setUserSecret] = useState("");
     const [isCorrect, setIsCorrect] = useState(null);
-    const [correctSecret, setCorrectSecret] = useState("");
-
-    // Set the correct secret based on the selected level
-    useEffect(() => {
-        let secret;
-        switch (selectedLevel.toLowerCase()) {
-            case "easy":
-                secret = "SHAKIRA";
-                break;
-            case "medium":
-                secret = "GUACAMOLE";
-                break;
-            case "hard":
-                secret = "SECRETDEFENSE";
-                break;
-            
-        }
-        setCorrectSecret(secret);
-    }, [selectedLevel]);
 
     // Handle input change
     const handleChange = (event) => {
@@ -33,12 +14,18 @@ const SecretInput = ({ selectedLevel }) => {
     // Handle secret submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (userSecret.trim().toUpperCase() === correctSecret.toUpperCase()) {
+        if (userSecret.trim().toUpperCase() === secret.toUpperCase()) {
             setIsCorrect(true);
         } else {
             setIsCorrect(false);
         }
     };
+
+    useEffect(() => {
+        setIsCorrect(null);
+        setUserSecret(null);
+        document.getElementsByClassName('secret-input')[0].value = null;
+    }, [secret]);
 
     return (
         <div className="secret-input-container">
