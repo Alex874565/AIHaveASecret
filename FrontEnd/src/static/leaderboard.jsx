@@ -9,7 +9,7 @@ let Leaderboard = () => {
     let [sortField, setSortField] = useState(null);
     let [sortOrder, setSortOrder] = useState('asc');
     let [currentPage, setCurrentPage] = useState(1);
-    const usersPerPage = 2;
+    const usersPerPage = 5;
 
     let getAis = async () => {
         let res = await axios.post('http://127.0.0.1:8001/api/ai/findall').catch((err) => {

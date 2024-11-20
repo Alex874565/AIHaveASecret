@@ -7,7 +7,6 @@
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 60px;
 
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
     background-repeat:no-repeat;
@@ -21,11 +20,15 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        margin-top: 200px;
     }
 
     #attack-custom-ai {
-        
+        margin-top: 180px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+
         padding: 30px;
         border-radius: 15px;
         

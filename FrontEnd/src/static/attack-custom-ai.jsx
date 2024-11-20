@@ -4,8 +4,7 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import Navbar from "../components/navbar.jsx";
 import './attack-custom-ai.css';
-import secretinput from "../components/secretinput.jsx";
-import Secretinput from "../components/secretinput.jsx";
+import SecretInput from "../components/secretinput.jsx";
 
 let AttackCustomAi = () => {
     const [ai, setAi] = useState({});
@@ -28,11 +27,8 @@ let AttackCustomAi = () => {
         <div id={"attack-custom-ai-page"}>
             <Navbar />
             <h2>Attack Custom AI</h2>
-            
             <div id={"attack-custom-ai"}>
-            
-                
-            <div id="ai-details">
+                <div id="ai-details">
                         <h3>{ai.name}</h3>
                         <p><strong>Creator:</strong> {ai.creator}</p>
                         <p><strong>Description:</strong> {ai.description}</p>
@@ -41,8 +37,8 @@ let AttackCustomAi = () => {
                         <p><strong>Successful Attacks:</strong> {ai.successful_attacks}</p>
                     </div>
 
+                <SecretInput secret={ai.secret} attacker={JSON.parse(localStorage.getItem('user')).name} ai = {ai}/>
                 <Chat secret={ai.secret} prompt={ai.prompt}/>
-                <Secretinput secret={ai.secret} />
             </div>
         </div>
     )
