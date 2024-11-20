@@ -62,11 +62,28 @@ th {
     background-color: #333;
     font-size: 1.2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 td {
     background-color: #444;
     font-size: 1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    & button {
+        background-color: #444;
+        margin: 2.5px;
+    }
+    & .active {
+        background-color: #222;
+        color: #666;
+    }
 }
 
 /* Hover Effects for Rows */
