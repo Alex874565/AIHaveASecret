@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './edit-ais.css';
+import Navbar from "../components/navbar.jsx";
 
 let EditAis = () => {
     const [ais, setAis] = useState([]);
@@ -30,6 +31,7 @@ let EditAis = () => {
 
     return (
         <div id={"edit-ais-page"}>
+            <Navbar />
             <h2>Edit Ais</h2>
             <div id={"edit-ais"}>
                 {ais.map((ai, index) => (

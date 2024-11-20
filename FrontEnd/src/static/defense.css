@@ -26,10 +26,26 @@
             font-weight: 600;
         }
 
-        & #edit-ais-title {
-            font-size: 2rem;
-            margin: 10px;
-            font-weight: 600;
+        /* Buttons for building AI and editing old AIs */
+    & #build-ai, #edit-ais-title {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 15px 25px;
+            background-color: #007bff; /* Blue color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            width: auto;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Hover effects for the "Build Your AI" and "Edit Your Old AIs" buttons */
+        & #build-ai:hover, #edit-ais-title:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-3px); /* Slight lift effect */
         }
 
         & .auth-redirect {

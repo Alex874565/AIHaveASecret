@@ -1,0 +1,103 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2a2a2a;
+    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* General Page Layout */
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 60px; /* Space for navbar */
+  }
+  
+  #leaderboard-page {
+    width: 90%;
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+/* Headings */
+#leaderboard-page h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+td {
+    background-color: #444;
+    font-size: 1rem;
+}
+
+/* Hover Effects for Rows */
+tbody tr:hover {
+    background-color: #555;
+}
+
+/* Odd and Even Row Styling */
+tbody tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #leaderboard-page {
+        padding: 20px;
+    }
+
+    #leaderboard-page h2 {
+        font-size: 1.6rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}

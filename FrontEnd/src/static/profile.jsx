@@ -1,5 +1,7 @@
 import bcrypt from 'bcryptjs';
 import axios from 'axios';
+import './profile.css';
+import Navbar from "../components/navbar.jsx";
 
 let Profile = () => {
 
@@ -49,9 +51,9 @@ let Profile = () => {
         }
     }
 
-    if(!localStorage.getItem('user')){
+    if (!localStorage.getItem('user')) {
         return (
-            <div>
+            <div id="not-logged-in">
                 <h2>Profile</h2>
                 <h3>You are not logged in</h3>
                 <a href={'/login'}>Login</a>
@@ -59,7 +61,9 @@ let Profile = () => {
         )
     }else {
         return (
+            
             <div id={"profile-page"}>
+                <Navbar />
                 <h2>Profile</h2>
                 <div>
                     <h3>Username: {JSON.parse(localStorage.getItem('user')).name}</h3>

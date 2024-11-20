@@ -1,0 +1,94 @@
+/* General page layout */
+#attack-menu-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Light gray background */
+    padding-top: 60px; /* Space for navbar */
+
+    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
+    background-repeat:no-repeat;
+}
+
+/* Styling for the header */
+h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+/* Attack menu container */
+#attack-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* AI card styling */
+.ai-card {
+    background-color: rgb(49, 49, 49);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the AI card */
+.ai-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card title and creator */
+.ai-card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+/* Description and stats styling */
+.ai-card p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Attack button styling */
+#attack-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the attack button */
+#attack-button:hover {
+    background-color: #0056b3;
+}
+
+/* For small screens, make sure everything looks good */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .ai-card {
+        padding: 15px;
+    }
+    .ai-card h3 {
+        font-size: 1.3rem;
+    }
+    .ai-card p {
+        font-size: 0.9rem;
+    }
+}

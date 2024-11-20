@@ -17,18 +17,56 @@
         justify-content: center;
         width: 50%;
         padding: 20px;
-        border: 1px solid black;
+        
         border-radius: 10px;
-        background-color: white;
+        
 
         & .ai-card{
 
             & h3{
-                color: black;
+                color:gray;
             }
             & p{
-                color: black;
+                color: rgb(255, 255, 255);
             }
         }
     }
+
+    /* Styling for the Edit button */
+    & #edit-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #28a745; /* Green background */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Hover effect for Edit button */
+    & #edit-button:hover {
+        background-color: #218838; /* Darker green on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .ai-card {
+        padding: 15px;
+    }
+
+    .ai-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .ai-card p {
+        font-size: 0.9rem;
+    }
+}
 }
