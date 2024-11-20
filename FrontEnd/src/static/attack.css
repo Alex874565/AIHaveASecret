@@ -50,6 +50,45 @@
     color: #d0d0d0;
 }
 
+@media (max-width: 768px) {
+    .tutorial-message h2 {
+        font-size: 1.5rem;
+    }
+
+    .tutorial-message p {
+        font-size: 0.9rem;
+    }
+
+    .level-select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .content-wrapper {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-message h2 {
+        font-size: 1.2rem;
+    }
+
+    .tutorial-message p {
+        font-size: 0.8rem;
+    }
+
+    .level-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .content-wrapper {
+        padding: 15px;
+    }
+}
 
         .level-select {
             padding: 10px;
@@ -79,3 +118,4 @@
 
    
 }
+
