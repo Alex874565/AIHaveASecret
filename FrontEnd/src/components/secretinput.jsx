@@ -15,13 +15,12 @@ const SecretInput = ({ selectedLevel }) => {
                 secret = "SHAKIRA";
                 break;
             case "medium":
-                secret = "PASSWORD123";
+                secret = "GUACAMOLE";
                 break;
             case "hard":
                 secret = "SECRETDEFENSE";
                 break;
-            default:
-                secret = "SHAKIRA";
+            
         }
         setCorrectSecret(secret);
     }, [selectedLevel]);

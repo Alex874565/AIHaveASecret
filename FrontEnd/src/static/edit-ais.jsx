@@ -37,8 +37,8 @@ let EditAis = () => {
                 {ais.map((ai, index) => (
                     <div key={ai.id || index} className={"ai-card"}>
                         <h3>{ai.name}</h3>
-                        <p>{ai.description}</p>
-                        <p>{ai.hints}</p>
+                        <p>Description: {ai.description}</p>
+                        <p>Hints: {ai.hints}</p>
                         <p>Attacks: {ai.total_attacks}</p>
                         <p>Successful attacks: {ai.successful_attacks}</p>
                         <a id={"edit-button"} href={`/edit-ai/${ai.creator}/${ai.name}`}>Edit</a>

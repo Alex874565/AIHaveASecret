@@ -5,68 +5,86 @@
     justify-content: center;
     margin-top: 50px;
 
-    & h1 {
-        color: black;
+    h2 {
+        color: rgb(255, 255, 255);
         margin-bottom: 20px;
     }
-
-    & #edit-ais {
+    
+    #edit-ais {
+        display: flex;
+        flex-wrap: wrap; /* This allows the cards to wrap into the next row */
+        gap: 20px; /* Space between cards */
+        justify-content: center; /* Center the cards horizontally */
+        width: 90%; /* Use 90% width for responsiveness */
+        max-width: 1200px; /* Limit the width for large screens */
+        padding: 20px;
+        box-sizing: border-box; /* Ensures padding doesn't mess with width */
+    }
+    
+    /* Styling for each AI card */
+    .ai-card {
+        background-color: #333; /* Dark background for contrast */
+        color: white; /* White text */
+        border-radius: 10px;
+        padding: 15px;
+        width: calc(33.333% - 20px); /* 3 cards per row, accounting for gap */
+        box-sizing: border-box; /* Ensures padding and width are accounted for */
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        padding: 20px;
-        
-        border-radius: 10px;
-        
-
-        & .ai-card{
-
-            & h3{
-                color:gray;
-            }
-            & p{
-                color: rgb(255, 255, 255);
-            }
-        }
+        align-items: flex-start;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease-in-out;
     }
-
-    /* Styling for the Edit button */
-    & #edit-button {
+    
+    /* Hover effect for the AI cards */
+    .ai-card:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+    }
+    
+    .ai-card h3 {
+        color: #ccc; /* Lighter gray for headings */
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .ai-card p {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+    
+    /* Styling for the Edit button inside the card */
+    #edit-button {
         display: inline-block;
         margin-top: 15px;
         padding: 10px 20px;
-        background-color: #28a745; /* Green background */
+        background-color: blue; /* Green background */
         color: white;
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        width:87%;
     }
-
+    
     /* Hover effect for Edit button */
-    & #edit-button:hover {
-        background-color: #218838; /* Darker green on hover */
+    #edit-button:hover {
+        background-color: rgb(0, 0, 214); /* Darker green on hover */
         transform: translateY(-2px); /* Slight lift on hover */
     }
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 2rem;
+    
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+        #edit-ais {
+            width: 100%;
+            flex-direction: column; /* Stack the cards vertically on small screens */
+            gap: 10px; /* Reduce space between stacked cards */
+        }
+    
+        .ai-card {
+            width: 100%; /* Make the cards full-width on smaller screens */
+        }
     }
-
-    .ai-card {
-        padding: 15px;
-    }
-
-    .ai-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .ai-card p {
-        font-size: 0.9rem;
-    }
+    
 }
-}
+

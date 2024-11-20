@@ -12,6 +12,7 @@ let AttackMenu = () => {
             console.log(err);
         });
         if(res.status === 200) {
+            
             await setAis(res.data);
             console.log(res.data);
             return res.data;
@@ -31,7 +32,7 @@ let AttackMenu = () => {
                     <div key={ai.id || index} className={"ai-card"}>
                         <h3>{ai.name}</h3>
                         <h3>{ai.creator}</h3>
-                        <p>{ai.description}</p>
+                        <p>Description: {ai.description}</p>
                         <p>Attacks: {ai.total_attacks}</p>
                         <p>Successful attacks: {ai.successful_attacks}</p>
                         <a id={"attack-button"} href={`/attack-custom-ai/${ai.creator}/${ai.name}`}>Attack</a>

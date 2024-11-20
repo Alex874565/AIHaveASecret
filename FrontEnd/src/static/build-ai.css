@@ -1,0 +1,115 @@
+/* Overall styling for the Build AI page */
+#build-ai-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Light background */
+
+    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
+    background-repeat:no-repeat;
+
+    /* Button styling */
+    & .button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Blue background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Form container styling */
+#build-ai-page > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(92, 91, 91);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Input fields styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Error message styling */
+#build-errors {
+    color: red;
+    font-size: 1rem;
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+    text-align: center;
+}
+
+/* Styling for the login error when not logged in */
+.login-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-error h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-error a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.login-error a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #build-ai-page > div {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

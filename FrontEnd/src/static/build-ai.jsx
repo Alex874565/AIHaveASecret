@@ -1,4 +1,6 @@
 import axios from 'axios';
+import './build-ai.css';
+import Navbar from "../components/navbar.jsx";
 
 let BuildAi = () => {
 
@@ -49,6 +51,7 @@ let BuildAi = () => {
     if(localStorage.getItem('user')) {
         return (
             <div id={"build-ai-page"}>
+                <Navbar />
                 <h2>Build AI</h2>
                 <div>
                     <input type="text" name="name" placeholder="Name"/>
@@ -57,11 +60,12 @@ let BuildAi = () => {
                     <input type="text" name="secret" placeholder="Secret"/>
                     <input type="text" name="hints" placeholder="Hints"/>
                     <button value={"Build AI"} onClick={buildAiApiCall}>Build AI</button>
+                    <div id={"build-errors"}></div>
                 </div>
-                <div id={"build-errors"}></div>
+                
             </div>
         )
-    }else{
+    } else {
         return (
             <div className={"login-error"}>
                 <h2>You must be logged in to build an AI</h2>

@@ -2,6 +2,8 @@ import Chat from "../components/chat.jsx";
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import Navbar from "../components/navbar.jsx";
+import './attack-custom-ai.css';
 
 let AttackCustomAi = () => {
     const [ai, setAi] = useState({});
@@ -22,15 +24,20 @@ let AttackCustomAi = () => {
 
     return (
         <div id={"attack-custom-ai-page"}>
+            <Navbar />
             <h2>Attack Custom AI</h2>
+            
             <div id={"attack-custom-ai"}>
-                <h3>{ai.name}</h3>
-                <h3>{ai.creator}</h3>
-                <p>{ai.description}</p>
-                <p>{ai.hints}</p>
-                <p>Attacks: {ai.total_attacks}</p>
-                <p>Successful Attacks: {ai.successful_attacks}</p>
-                <button>Attack</button>
+            
+                
+            <div id="ai-details">
+                        <h3>{ai.name}</h3>
+                        <p><strong>Creator:</strong> {ai.creator}</p>
+                        <p><strong>Description:</strong> {ai.description}</p>
+                        <p><strong>Hints:</strong> {ai.hints}</p>
+                        <p><strong>Total Attacks:</strong> {ai.total_attacks}</p>
+                        <p><strong>Successful Attacks:</strong> {ai.successful_attacks}</p>
+                    </div>
                 <Chat secret={ai.secret} prompt={ai.prompt}/>
             </div>
         </div>
