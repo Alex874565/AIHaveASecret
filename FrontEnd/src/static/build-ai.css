@@ -13,7 +13,7 @@
 
     /* Button styling */
 
-    & .button {
+    & #button {
         padding: 12px 20px;
         font-size: 1rem;
         font-weight: bold;
@@ -40,7 +40,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: rgb(92, 91, 91);
+        background-color: #333;
         padding: 20px;
         width: 100%;
         max-width: 400px;
@@ -58,7 +58,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         box-sizing: border-box;
-        background-color: #333;
+        background-color: rgb(92, 91, 91);
     }
 
 

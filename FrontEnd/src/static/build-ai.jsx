@@ -59,7 +59,7 @@ let BuildAi = () => {
                     <input type="text" name="prompt" placeholder="Prompt"/>
                     <input type="text" name="secret" placeholder="Secret"/>
                     <input type="text" name="hints" placeholder="Hints"/>
-                    <button value={"Build AI"} onClick={buildAiApiCall}>Build AI</button>
+                    <button id={"button"} onClick={buildAiApiCall}>Build AI</button>
                     <div id={"build-errors"}></div>
                 </div>
                 
