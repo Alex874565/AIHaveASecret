@@ -5,12 +5,12 @@
     justify-content: center;
     margin-top: 50px;
 
-    h2 {
+    & h2 {
         color: rgb(255, 255, 255);
         margin-bottom: 20px;
     }
-    
-    #edit-ais {
+
+    & #edit-ais {
         display: flex;
         flex-wrap: wrap; /* This allows the cards to wrap into the next row */
         gap: 20px; /* Space between cards */
@@ -20,9 +20,10 @@
         padding: 20px;
         box-sizing: border-box; /* Ensures padding doesn't mess with width */
     }
-    
+
     /* Styling for each AI card */
-    .ai-card {
+
+    & .ai-card {
         background-color: #333; /* Dark background for contrast */
         color: white; /* White text */
         border-radius: 10px;
@@ -35,25 +36,27 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s ease-in-out;
     }
-    
+
     /* Hover effect for the AI cards */
-    .ai-card:hover {
+
+    & .ai-card:hover {
         transform: translateY(-5px); /* Lift effect on hover */
     }
-    
-    .ai-card h3 {
+
+    & .ai-card h3 {
         color: #ccc; /* Lighter gray for headings */
         font-size: 1.2rem;
         margin-bottom: 10px;
     }
-    
-    .ai-card p {
+
+    & .ai-card p {
         font-size: 1rem;
         margin: 5px 0;
     }
-    
+
     /* Styling for the Edit button inside the card */
-    #edit-button {
+
+    & #edit-button {
         display: inline-block;
         margin-top: 15px;
         padding: 10px 20px;
@@ -64,27 +67,27 @@
         font-weight: bold;
         transition: background-color 0.3s ease, transform 0.2s ease;
         text-align: center;
-        width:87%;
+        width: 87%;
     }
-    
+
     /* Hover effect for Edit button */
-    #edit-button:hover {
+
+    & #edit-button:hover {
         background-color: rgb(0, 0, 214); /* Darker green on hover */
         transform: translateY(-2px); /* Slight lift on hover */
     }
-    
-    /* Responsive design for smaller screens */
-    @media (max-width: 768px) {
-        #edit-ais {
-            width: 100%;
-            flex-direction: column; /* Stack the cards vertically on small screens */
-            gap: 10px; /* Reduce space between stacked cards */
-        }
-    
-        .ai-card {
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #edit-ais {
+        width: 100%;
+        flex-direction: column; /* Stack the cards vertically on small screens */
+        gap: 10px; /* Reduce space between stacked cards */
+
+        & .ai-card {
             width: 100%; /* Make the cards full-width on smaller screens */
         }
     }
-    
 }
 

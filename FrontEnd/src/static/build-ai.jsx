@@ -67,9 +67,12 @@ let BuildAi = () => {
         )
     } else {
         return (
-            <div className={"login-error"}>
-                <h2>You must be logged in to build an AI</h2>
-                <a href={"/login"}>Login</a>
+            <div id={"build-ai-page"}>
+                <Navbar />
+                <div className={"login-error"}>
+                    <h2>You must be logged in to build an AI</h2>
+                    <a href={"/login"}>Login</a>
+                </div>
             </div>
         )
     }

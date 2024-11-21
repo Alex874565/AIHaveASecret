@@ -12,130 +12,130 @@
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-}
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #f0f0f0;
-}
+    & h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #f0f0f0;
+    }
 
-#edit-ai {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    width: 70%;
-    max-width: 800px;
-    text-align: center;
-    margin-top: 300px;
-}
+    & #edit-ai {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        width: 70%;
+        max-width: 800px;
+        text-align: center;
+        margin-top: 300px;
+    }
 
-.ai-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
+    & .ai-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
 
-.ai-card h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
+    & .ai-card h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #fff;
+    }
 
-.ai-card p {
-    font-size: 1rem;
-    color: #d0d0d0;
-}
+    & .ai-card p {
+        font-size: 1rem;
+        color: #d0d0d0;
+    }
 
-.input-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
+    & .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
 
-.input-group label {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 10px;
-    display: block;
-}
+    & .input-group label {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 10px;
+        display: block;
+    }
 
-.input-group textarea {
-    width: 95%;
-    padding: 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 5px;
-    resize: vertical;
-}
+    & .input-group textarea {
+        width: 95%;
+        padding: 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #333;
+        color: #fff;
+        margin-top: 5px;
+        resize: vertical;
+    }
 
-.input-group textarea:focus {
-    outline: none;
-    border: 2px solid #007bff;
-}
+    & .input-group textarea:focus {
+        outline: none;
+        border: 2px solid #007bff;
+    }
 
-.button-group {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
+    & .button-group {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
 
-.save-btn, .delete-btn {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
+    & .save-btn, .delete-btn {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
 
-.save-btn {
-    background-color: #28a745;
-    color: white;
-}
+    & .save-btn {
+        background-color: #28a745;
+        color: white;
+    }
 
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
-}
+    & .delete-btn {
+        background-color: #dc3545;
+        color: white;
+    }
 
-.save-btn:hover, .delete-btn:hover {
-    transform: translateY(-3px);
-}
+    & .save-btn:hover, .delete-btn:hover {
+        transform: translateY(-3px);
+    }
 
-.save-btn:focus, .delete-btn:focus {
-    outline: none;
+    & .save-btn:focus, .delete-btn:focus {
+        outline: none;
+    }
 }
 
 @media (max-width: 768px) {
     #edit-ai {
         width: 90%;
         padding: 20px;
-    }
 
-    .ai-card h3 {
-        font-size: 1.5rem;
-    }
+        & .ai-card h3 {
+            font-size: 1.5rem;
+        }
 
-    .input-group label {
-        font-size: 1rem;
-    }
+        & .input-group label {
+            font-size: 1rem;
+        }
 
-    .input-group textarea {
-        font-size: 0.9rem;
-        padding: 12px;
-    }
+        & .input-group textarea {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
 
-    .button-group {
-        flex-direction: column;
-    }
+        & .button-group {
+            flex-direction: column;
+        }
 
-    .save-btn, .delete-btn {
-        width: 100%;
-        margin-bottom: 10px;
+        & .save-btn, .delete-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
     }
 }

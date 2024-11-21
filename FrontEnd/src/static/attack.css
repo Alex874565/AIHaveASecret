@@ -83,6 +83,9 @@
         width: 100%;
         padding: 10px;
         font-size: 0.8rem;
+        & option {
+            font-size: .8rem;
+        }
     }
 
     .content-wrapper {
@@ -119,3 +122,10 @@
    
 }
 
+@media(max-width: 420px) {
+    #attack-page{
+        .content-wrapper{
+            margin-top: 400px;
+        }
+    }
+}

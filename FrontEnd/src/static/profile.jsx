@@ -61,10 +61,13 @@ let Profile = () => {
 
   if (!localStorage.getItem("user")) {
     return (
-      <div id="not-logged-in">
-        <h2>Profile</h2>
-        <h3>You are not logged in</h3>
-        <a href={"/login"}>Login</a>
+      <div id={"profile-page"}>
+          <Navbar />
+          <div id="not-logged-in">
+            <h2>Profile</h2>
+            <h3>You are not logged in</h3>
+            <a href={"/login"}>Login</a>
+          </div>
       </div>
     );
   } else {

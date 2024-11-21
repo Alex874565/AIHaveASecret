@@ -26,18 +26,18 @@ let AttackCustomAi = () => {
     return (
         <div id={"attack-custom-ai-page"}>
             <Navbar />
-            <h2>Attack Custom AI</h2>
             <div id={"attack-custom-ai"}>
+                <h4>Attack Custom AI</h4>
                 <div id="ai-details">
-                        <h3>{ai.name}</h3>
-                        <p><strong>Creator:</strong> {ai.creator}</p>
-                        <p><strong>Description:</strong> {ai.description}</p>
-                        <p><strong>Hints:</strong> {ai.hints}</p>
-                        <p><strong>Total Attacks:</strong> {ai.total_attacks}</p>
-                        <p><strong>Successful Attacks:</strong> {ai.successful_attacks}</p>
-                    </div>
+                    <h3>{ai.name}</h3>
+                    <p><strong>Creator:</strong> {ai.creator}</p>
+                    <p><strong>Description:</strong> {ai.description}</p>
+                    <p><strong>Hints:</strong> {ai.hints}</p>
+                    <p><strong>Total Attacks:</strong> {ai.total_attacks}</p>
+                    <p><strong>Successful Attacks:</strong> {ai.successful_attacks}</p>
+                </div>
 
-                <SecretInput secret={ai.secret} attacker={JSON.parse(localStorage.getItem('user')).name} ai = {ai}/>
+                <SecretInput secret={ai.secret} attacker={JSON.parse(localStorage.getItem('user')).name} ai={ai}/>
                 <Chat secret={ai.secret} prompt={ai.prompt}/>
             </div>
         </div>

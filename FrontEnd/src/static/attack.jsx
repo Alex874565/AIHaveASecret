@@ -5,7 +5,7 @@ import SecretInput from "../components/secretinput.jsx";  // Import SecretInput 
 import { useState } from "react";
 
 const Attack = () => {
-    const [selectedLevel, setSelectedLevel] = useState("Easy");
+    const [selectedLevel, setSelectedLevel] = useState("easy");
 
     const handleLevelChange = (event) => {
         setSelectedLevel(event.target.value);

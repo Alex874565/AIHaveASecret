@@ -7,8 +7,8 @@
     align-items: center;
 
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
-    background-repeat:no-repeat;
-    
+    background-repeat: no-repeat;
+
 
     & .content-wrapper {
         display: flex;
@@ -20,7 +20,7 @@
         color: rgb(255, 255, 255);
     }
 
-    .subtitle {
+    & .subtitle {
         text-align: center;
         display: flex;
         justify-content: center;
@@ -28,13 +28,13 @@
         width: 100%; /* Ensure it takes full width */
         flex-direction: column; /* Stacks text elements vertically if there are multiple lines */
     }
-    
-    
-    h1{
-        font-size:5rem
+
+
+    & h1 {
+        font-size: 3rem;
     }
-    
-    .button {
+
+    & .button {
         border: none;
         padding: 16px 32px;
         text-align: center;
@@ -44,76 +44,81 @@
         margin: 40px 30px;
         transition-duration: 0.4s;
         cursor: pointer;
-      }
-    
-      .button_att {
-        background-color:rgb(23, 23, 23); 
-        color: rgb(255, 255, 255); 
+    }
+
+    & .button_att {
+        background-color: rgb(23, 23, 23);
+        color: rgb(255, 255, 255);
         border-radius: 10px;
-        padding:16px 64px;
-    
+        padding: 16px 64px;
+
         &:hover {
             background-color: rgb(12, 12, 12);
             color: rgb(255, 255, 255);
-          }
-      }
-    
-      .button_def {
-        background-color: rgb(255, 255, 255); 
-        color: rgb(0, 0, 0); 
+        }
+    }
+
+    & .button_def {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         border-radius: 10px;
-    
+
         &:hover {
             background-color: rgb(226, 226, 226);
             color: rgb(0, 0, 0);
-          }
-      }
-    
+        }
+    }
+}
+
     /* Responsive design for smaller screens */
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+    #landing-page {
         h1 {
             font-size: 3rem;
         }
-    
+
         h2 {
             font-size: 1.2rem;
         }
-    
+
         .button {
             padding: 12px 24px;
             font-size: 0.9rem;
         }
-    
+
         .button_att {
             padding: 12px 48px;
         }
     }
-    
-    @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
+    #landing-page {
         h1 {
             font-size: 2.5rem;
         }
-    
+
         h2 {
             font-size: 1rem;
         }
-    
+
         .button {
             padding: 20px 40px; /* Larger padding for bigger buttons */
             font-size: 1.1rem; /* Larger font size for better readability */
             margin: 15px; /* Increased margin between buttons */
-            
+
         }
-    
+
         .button_att {
             padding: 20px 80px;
         }
-    
+
         #landing-page {
             padding: 0 10px;
         }
-    
+
         /* Stack buttons vertically on phones */
+
         .button-container {
             display: flex;
             flex-direction: column;
@@ -121,13 +126,12 @@
             justify-content: center; /* Centers buttons vertically */
             width: 100%; /* Full width of the parent container */
         }
-    
+
         /* Show line break in subtitle before "Attack" on phones */
         .subtitle .line-break {
             display: inline;
         }
     }
-    
 }
 
 

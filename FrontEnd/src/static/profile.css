@@ -1,6 +1,6 @@
 /* General Page Styling */
 #profile-page {
-    margin-top: 80px;
+    margin-top: 0;
     height: 100%;
     width: 100%;
     display: flex;
@@ -15,7 +15,8 @@
     overflow-y: scroll;
 
     /* Error Feedback */
-    #password-errors {
+
+    & #password-errors {
         color: red;
         font-size: 1rem;
         font-weight: 600;
@@ -24,7 +25,7 @@
         box-shadow: none;
     }
 
-    #profile-content {
+    & #profile-content {
         width: 70%;
         padding: 20px;
         border-radius: 10px;
@@ -32,9 +33,10 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 
-      }
+    }
 
     /* Headings */
+
     & h2 {
         font-size: 2rem;
         margin-bottom: 20px;
@@ -48,6 +50,7 @@
     }
 
     /* Profile Container */
+
     & div {
         color: white;
         display: flex;
@@ -64,6 +67,7 @@
     }
 
     /* Input Fields */
+
     & input {
         padding: 12px;
         margin: 10px 0;
@@ -81,6 +85,7 @@
     }
 
     /* Buttons */
+
     & button {
         padding: 12px;
         font-size: 1.1rem;
@@ -99,8 +104,8 @@
     }
 
 
-
     /* Change Password Section */
+
     & #change-password {
         width: 100%;
         margin-top: 20px;
@@ -125,12 +130,14 @@
     }
 
     /* Buttons to Toggle Password Form */
+
     & #open-change-password, #close-change-password {
         width: 100%;
     }
+}
 
     /* Not Logged In State */
-    & #not-logged-in {
+    #not-logged-in {
         text-align: center;
         color: white;
         max-width: 600px;
@@ -140,11 +147,11 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    & #not-logged-in h3 {
+    #not-logged-in h3 {
         margin-bottom: 20px;
     }
 
-    & #not-logged-in a {
+    #not-logged-in a {
         font-size: 1.1rem;
         color: white;
         background-color: #007bff;
@@ -154,10 +161,9 @@
         transition: background-color 0.3s ease;
     }
 
-    & #not-logged-in a:hover {
+    #not-logged-in a:hover {
         background-color: #0056b3;
     }
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {

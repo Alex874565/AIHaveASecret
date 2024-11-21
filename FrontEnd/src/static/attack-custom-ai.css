@@ -9,7 +9,7 @@
     padding-bottom: 10px;
 
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     overflow-y: scroll;
 
     & .content-wrapper {
@@ -22,58 +22,57 @@
         width: 100%;
     }
 
-    #attack-custom-ai {
-        margin-top: 180px;
+    & #attack-custom-ai {
+        margin-top: 300px;
         display: flex;
-        align-content: center;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
 
         padding: 30px;
         border-radius: 15px;
-        
+
         width: 80%;
         max-width: 1000px;
         color: #fff;
     }
 
     /* AI Details Card */
-#ai-details {
-   
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    
-    
-    text-align: center;
-    margin-top: 300px;
-}
 
-#ai-details .ai-name {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #ffcc00;
-}
+    & #ai-details {
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+        margin-top: 300px;
+    }
 
-#ai-details p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
+    & #ai-details .ai-name {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #ffcc00;
+    }
 
-#ai-details .stats {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
+    & #ai-details p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 
-#ai-details .stats p {
-    background-color: #3e3e4e;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: 100%;
+    & #ai-details .stats {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    & #ai-details .stats p {
+        background-color: #3e3e4e;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+    }
 }
 
     /* Responsive Design */
@@ -81,23 +80,22 @@
     #attack-custom-ai {
         width: 90%;
         padding: 20px;
-    }
 
-    h2 {
-        font-size: 1.8rem;
-    }
+        & h2 {
+            font-size: 1.8rem;
+        }
 
-    #ai-details h3 {
-        font-size: 1.3rem;
-    }
+        & #ai-details h3 {
+            font-size: 1.3rem;
+        }
 
-    #ai-details p {
-        font-size: 0.9rem;
-    }
+        & #ai-details p {
+            font-size: 0.9rem;
+        }
 
-    #attack-actions button {
-        padding: 12px 30px;
-        font-size: 1rem;
+        & #attack-actions button {
+            padding: 12px 30px;
+            font-size: 1rem;
+        }
     }
-}
 }

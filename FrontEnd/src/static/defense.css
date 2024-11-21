@@ -27,7 +27,7 @@
         }
 
         /* Buttons for building AI and editing old AIs */
-    & #build-ai, #edit-ais-title {
+        & #build-ai, #edit-ais-title {
             display: inline-block;
             margin: 10px 0;
             padding: 15px 25px;
@@ -64,9 +64,9 @@
                 margin: 40px 30px;
                 transition-duration: 0.4s;
                 cursor: pointer;
-              }
+            }
             
-              .button_login {
+            .button_login {
                 background-color:rgb(23, 23, 23); 
                 color: rgb(255, 255, 255); 
                 border-radius: 10px;
@@ -76,9 +76,9 @@
                     background-color: rgb(12, 12, 12);
                     color: rgb(255, 255, 255);
                   }
-              }
+            }
             
-              .button_register {
+            .button_register {
                 background-color: rgb(255, 255, 255); 
                 color: rgb(0, 0, 0); 
                 border-radius: 10px;
@@ -87,10 +87,8 @@
                 &:hover {
                     background-color: rgb(226, 226, 226);
                     color: rgb(0, 0, 0);
-                  }
-              }
-
-                
+                }
             }
         }
     }
+}
