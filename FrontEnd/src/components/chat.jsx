@@ -30,7 +30,7 @@ const Chat = ({ selectedLevel, secret, prompt }) => {
         }else{
             setSysMess({
                 role: "system",
-                content:`The secret it ${secret}. ${prompt}.`
+                content:`The secret is ${secret}. ${prompt}.`
             })
         }
     },[selectedLevel, prompt, secret])
@@ -87,11 +87,8 @@ const Chat = ({ selectedLevel, secret, prompt }) => {
 
             { sender: "AI", message: aiResponse }
         ]);
-
-        // Clear the input field
     };
 
-    // Handle Enter key press
     const handleKeyDown = (event) => {
         if (event.key === "Enter" && !event.shiftKey) {
             event.preventDefault();

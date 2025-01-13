@@ -106,15 +106,14 @@ let Profile = () => {
                 </button>
                 <button
                 onClick={() => {
-                    localStorage.removeItem("user");
-                    window.location.href = "/login";
+                    if(confirm("Are you sure you want to log out?")) {
+                        localStorage.removeItem("user");
+                        window.location.href = "/login";
+                    }
                 }}
                 >
                 Logout
                 </button>
-            
-                
-            
             </div>
         </div>
     );

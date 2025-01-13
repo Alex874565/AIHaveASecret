@@ -5,7 +5,7 @@ import SecretInput from "../components/secretinput.jsx";  // Import SecretInput 
 import { useState } from "react";
 
 const Attack = () => {
-    const [selectedLevel, setSelectedLevel] = useState("easy");
+    const [selectedLevel, setSelectedLevel] = useState("Easy");
 
     const handleLevelChange = (event) => {
         setSelectedLevel(event.target.value);
@@ -27,14 +27,14 @@ const Attack = () => {
                 {/* Level Selection Dropdown */}
                 <div className="level-select-container">
                     <select value={selectedLevel} onChange={handleLevelChange} className="level-select">
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="hard">Hard</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
                     </select>
                 </div>
 
                 {/* Secret Input Component */}
-                <SecretInput secret={selectedLevel === 'easy' ? "SHAKIRA" : selectedLevel === 'medium' ? 'GUACAMOLE' : 'DESPACITO'} />
+                <SecretInput secret={selectedLevel === 'Easy' ? "SHAKIRA" : selectedLevel === 'Medium' ? 'GUACAMOLE' : 'DESPACITO'} />
 
                 {/* Chat Component */}
                 <Chat selectedLevel={selectedLevel} />
