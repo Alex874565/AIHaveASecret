@@ -5,6 +5,7 @@
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
     background-repeat: no-repeat;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     & .content-wrapper {
         color: black;

@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import Navbar from "../components/navbar.jsx";
 import './edit-ai.css';
 
-
 let EditAi = () => {
     const [ai, setAi] = useState({});
+    const [errors, setErrors] = useState({});
 
     let { name, creator } = useParams();
 
@@ -18,7 +18,7 @@ let EditAi = () => {
             setAi(res.data);
             return res.data;
         }
-    }
+    };
 
     useEffect(() => {
         getAi(name, creator);
@@ -28,34 +28,55 @@ let EditAi = () => {
         let newAi = { ...ai };
         newAi[key] = value;
         setAi(newAi);
-    }
+
+        // Clear errors for the field when the user types
+        if (value.trim() !== '') {
+            setErrors((prev) => ({ ...prev, [key]: '' }));
+        }
+    };
+
+    let validateFields = () => {
+        let newErrors = {};
+        if (!ai.description || ai.description.trim() === '') newErrors.description = 'Description is required';
+        if (!ai.hints || ai.hints.trim() === '') newErrors.hints = 'Hints are required';
+        if (!ai.prompt || ai.prompt.trim() === '') newErrors.prompt = 'Prompt is required';
+        if (!ai.secret || ai.secret.trim() === '') newErrors.secret = 'Secret is required';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Return true if no errors
+    };
 
     let saveChanges = async (ai) => {
+        if (!validateFields()) {
+            alert('Please fill out all required fields.');
+            return;
+        }
+
         let res = await axios.post(`http://127.0.0.1:8001/api/ai/update/${ai.creator}/${ai.name}`, ai).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {
-            alert('AI updated');
+            alert('AI updated successfully!');
             window.location.href = '/edit-ais';
         }
-    }
+    };
 
     let deleteAi = async (ai) => {
         let res = await axios.post(`http://127.0.0.1:8001/api/ai/delete/${ai.creator}/${ai.name}`).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {
-            alert('AI deleted');
+            alert('AI deleted successfully!');
             window.location.href = '/edit-ais';
         }
-    }
+    };
 
     return (
-        <div id={"edit-ai-page"}>
+        <div id="edit-ai-page">
             <Navbar />
             <h2>Edit AI</h2>
-            <div id={"edit-ai"}>
-                <div className={"ai-card"}>
+            <div id="edit-ai">
+                <div className="ai-card">
                     <h3>{ai.name}</h3>
                     <p><strong>Creator:</strong> {ai.creator}</p>
 
@@ -67,6 +88,7 @@ let EditAi = () => {
                             onChange={(e) => handleInputChange('description', e.target.value)}
                             placeholder="Edit the description of the AI..."
                         />
+                        {errors.description && <p className="error">{errors.description}</p>}
                     </div>
 
                     <div className="input-group">
@@ -77,6 +99,7 @@ let EditAi = () => {
                             onChange={(e) => handleInputChange('hints', e.target.value)}
                             placeholder="Edit the hints of the AI..."
                         />
+                        {errors.hints && <p className="error">{errors.hints}</p>}
                     </div>
 
                     <div className="input-group">
@@ -87,6 +110,7 @@ let EditAi = () => {
                             onChange={(e) => handleInputChange('prompt', e.target.value)}
                             placeholder="Edit the prompt of the AI..."
                         />
+                        {errors.prompt && <p className="error">{errors.prompt}</p>}
                     </div>
 
                     <div className="input-group">
@@ -97,6 +121,7 @@ let EditAi = () => {
                             onChange={(e) => handleInputChange('secret', e.target.value)}
                             placeholder="Edit the secret of the AI..."
                         />
+                        {errors.secret && <p className="error">{errors.secret}</p>}
                     </div>
 
                     <div className="input-group">
@@ -108,12 +133,10 @@ let EditAi = () => {
                         <button className="save-btn" onClick={() => saveChanges(ai)}>Save Changes</button>
                         <button className="delete-btn" onClick={() => deleteAi(ai)}>Delete AI</button>
                     </div>
-
-                    
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default EditAi;
