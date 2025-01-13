@@ -49,7 +49,10 @@ let Profile = () => {
     let res2 = await axios
       .post(`http://127.0.0.1:8001/api/user/update/${JSON.parse(localStorage.getItem("user")).name}`, {
         password: newPassword,
-      })
+      },{
+          headers : {
+              "Authorization": 'Bearer ' + localStorage.getItem('token')
+          }})
       .catch((err) => {
         document.getElementById("password-errors").innerText = err.response.data.message;
       });

@@ -28,6 +28,7 @@ var Login = () => {
         })
         if(res && res.status === 200 && res.data.user){
             localStorage.setItem('user', JSON.stringify(res.data.user));
+            localStorage.setItem('token', res.data.token)
             window.location.href = '/';
         }
     }

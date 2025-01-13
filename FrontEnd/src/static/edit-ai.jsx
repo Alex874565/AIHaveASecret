@@ -11,7 +11,10 @@ let EditAi = () => {
     let { name, creator } = useParams();
 
     let getAi = async (name, creator) => {
-        let res = await axios.post(`http://127.0.0.1:8001/api/ai/find/${creator}/${name}`).catch((err) => {
+        let res = await axios.post(`http://127.0.0.1:8001/api/ai/find/${creator}/${name}`, {},{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {

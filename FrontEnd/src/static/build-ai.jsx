@@ -37,7 +37,10 @@ let BuildAi = () => {
             system_prompt: prompt,
             secret: secret,
             hints: hints
-        }).then((res) => {
+        },{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).then((res) => {
             if(res.status === 201){
                 alert('AI created');
                 window.location.href = '/defense';

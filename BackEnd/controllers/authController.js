@@ -3,6 +3,8 @@ const nodemailer = require('nodemailer');
 const User = require('../models/userModel');
 const UserController = require('./userController');
 
+const jwt = require("jsonwebtoken")
+
 function registerUser(req, res){
     const name = req.body.name;
     const email = req.body.email;
@@ -30,9 +32,10 @@ async function loginUser(req, res){
     const password = req.body.password;
     let user = await User.findOne({email:email});
     if(user){
-        let passOk = await user.validatePassword(password)
+        let passOk = await user.validatePassword(password);
         if(passOk){
-            return res.status(200).json({user: user})
+            const token = generateAccessToken(email, password)
+            return res.status(200).json({user: user, token: token})
         }else{
             return res.status(401).json({error: "Invalid password"})
         }
@@ -72,27 +75,37 @@ async function checkUserExistence(req, res){
     const email = req.body.email
     const name = req.body.name
 
-    var user = await User.findOne({name:name});
+    let user = await User.findOne({name: name});
 
-    var nameExists;
+    let nameExists;
 
-    if(user){
-        nameExists = true
-    }else {
-        nameExists = false
-    }
+    nameExists = !!user;
 
     user = await User.findOne({email:email});
 
-    var emailExists;
+    let emailExists;
 
-    if(user){
-        emailExists = true
-    } else {
-        emailExists = false
-    }
+    emailExists = !!user;
 
     res.status(200).json({nameExists: nameExists, emailExists: emailExists})
 }
 
-module.exports = {registerUser, loginUser, sendMail, checkUserExistence};
+function generateAccessToken(email, password){
+    return jwt.sign({email : email, password : password}, process.env.TOKEN_SECRET, {noTimestamp : true});
+}
+
+function checkToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]
+
+    if(token == null){
+        return res.sendStatus(401);
+    }
+
+    jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
+        if (err) return res.sendStatus(403);
+        next();
+    })
+}
+
+module.exports = { registerUser, loginUser, sendMail, checkUserExistence, checkToken};

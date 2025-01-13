@@ -12,7 +12,10 @@ let Leaderboard = () => {
     const usersPerPage = 5;
 
     let getAis = async () => {
-        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall').catch((err) => {
+        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall', {},{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if(res.status === 200) {
@@ -22,7 +25,10 @@ let Leaderboard = () => {
     }
 
     let getUsers = async () => {
-        let res = await axios.post('http://127.0.0.1:8001/api/user/findall').catch((err) => {
+        let res = await axios.post('http://127.0.0.1:8001/api/user/findall', {},{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if(res.status === 200) {
@@ -75,7 +81,7 @@ let Leaderboard = () => {
                 <table style={{color: 'black'}}>
                     <thead>
                     <tr>
-                        <th onClick={() => handleSort('rank')}>Rank{renderSortArrow('rank')}</th>
+                        <th>Rank</th>
                         <th onClick={() => handleSort('name')}>Name{renderSortArrow('name')}</th>
                         <th onClick={() => handleSort('ais')}>AIs{renderSortArrow('ais')}</th>
                         <th onClick={() => handleSort('trophies')}>Trophies{renderSortArrow('trophies')}</th>

@@ -11,7 +11,10 @@ let EditAis = () => {
         if(!name || name === ""){
             return false;
         }
-        let res = await axios.post(`http://127.0.0.1:8001/api/ai/findall/${name}`).catch((err) => {
+        let res = await axios.post(`http://127.0.0.1:8001/api/ai/findall/${name}`, {},{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if(res.status === 200) {
@@ -42,6 +45,7 @@ let EditAis = () => {
                         <p>Attacks: {ai.total_attacks}</p>
                         <p>Successful attacks: {ai.successful_attacks}</p>
                         <a id={"edit-button"} href={`/edit-ai/${ai.creator}/${ai.name}`}>Edit</a>
+                        <a id={"attack-button"} href={`/attack-custom-ai/${ai.creator}/${ai.name}`}>Attack</a>
                     </div>
                 ))}
             </div>

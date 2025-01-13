@@ -1,12 +1,9 @@
 /* General page layout */
 #attack-menu-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     height: 100%;
     background-color: #f4f4f4; /* Light gray background */
-    padding-top: 60px; /* Space for navbar */
+    margin-top: 60px; /* Space for navbar */
+    overflow-y: scroll;
 
     background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
     background-repeat: no-repeat;
@@ -16,7 +13,8 @@
     & h2 {
         font-size: 2.5rem;
         color: #ffffff;
-        margin: 20px 0;
+        margin: 20px auto;
+        text-align: center;
     }
 
     /* Attack menu container */
@@ -27,7 +25,7 @@
         gap: 20px;
         width: 90%;
         max-width: 1200px;
-        padding: 20px;
+        margin: 20px;
     }
 
     /* AI card styling */
@@ -155,6 +153,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
         & .ai-card {

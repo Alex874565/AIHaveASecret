@@ -8,7 +8,10 @@ let AttackMenu = () => {
     const [ais, setAis] = useState([]);
 
     let getAis = async (name) => {
-        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall').catch((err) => {
+        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall', {},{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if(res.status === 200) {
