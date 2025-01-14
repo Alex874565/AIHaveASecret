@@ -3,6 +3,8 @@
     padding: 0;
     margin: 0;
 
+    overflow-y: auto;
+
     & .content-wrapper {
         color: black;
         display: flex;
