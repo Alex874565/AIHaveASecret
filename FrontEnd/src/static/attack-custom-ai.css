@@ -5,9 +5,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
-    background-repeat: no-repeat;
-    overflow-y: scroll;
+    
 
     & .content-wrapper {
         color: black;

@@ -55,7 +55,10 @@ let EditAi = () => {
             return;
         }
 
-        let res = await axios.post(`http://127.0.0.1:8001/api/ai/update/${ai.creator}/${ai.name}`, ai).catch((err) => {
+        let res = await axios.post(`http://127.0.0.1:8001/api/ai/update/${ai.creator}/${ai.name}`, ai,{
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {
@@ -65,7 +68,10 @@ let EditAi = () => {
     };
 
     let deleteAi = async (ai) => {
-        let res = await axios.post(`http://127.0.0.1:8001/api/ai/delete/${ai.creator}/${ai.name}`).catch((err) => {
+        let res = await axios.post(`http://127.0.0.1:8001/api/ai/delete/${ai.creator}/${ai.name}`,{}, {
+            headers : {
+                "Authorization": 'Bearer ' + localStorage.getItem('token')
+            }}).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {
