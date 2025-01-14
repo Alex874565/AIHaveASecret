@@ -8,12 +8,15 @@ let AttackMenu = () => {
     const [sortedAis, setSortedAis] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortCondition, setSortCondition] = useState('none'); // Example: none, most-attacks, highest-success
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // Number of items per page
 
-    let getAis = async (name) => {
-        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall', {},{
-            headers : {
+    let getAis = async () => {
+        let res = await axios.post('http://127.0.0.1:8001/api/ai/findall', {}, {
+            headers: {
                 "Authorization": 'Bearer ' + localStorage.getItem('token')
-            }}).catch((err) => {
+            }
+        }).catch((err) => {
             console.log(err);
         });
         if (res.status === 200) {
@@ -23,7 +26,6 @@ let AttackMenu = () => {
         }
     };
 
-    // Sort AIs based on the selected condition
     const sortAis = () => {
         let sorted = [...ais];
 
@@ -46,17 +48,29 @@ let AttackMenu = () => {
         setSortedAis(sorted);
     };
 
-    // Watch for changes in searchQuery or sortCondition
     useEffect(() => {
         sortAis();
+        setCurrentPage(1); // Reset to the first page when searchQuery or sortCondition changes
     }, [searchQuery, sortCondition]);
 
-    // Fetch data on component mount
     useEffect(() => {
-        if(localStorage.getItem('user')) {
+        if (localStorage.getItem('user')) {
             getAis();
         }
     }, []);
+
+    // Get paginated data
+    const paginatedData = sortedAis.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
+    // Calculate total pages
+    const totalPages = Math.ceil(sortedAis.length / itemsPerPage);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
 
     if (localStorage.getItem('user')) {
         return (
@@ -88,7 +102,7 @@ let AttackMenu = () => {
 
                     {/* Attack Menu */}
                     <div id="attack-menu">
-                        {sortedAis.map((ai, index) => (
+                        {paginatedData.map((ai, index) => (
                             <div key={ai.id || index} className="ai-card">
                                 <h3>{ai.name}</h3>
                                 <h3>{ai.creator}</h3>
@@ -99,6 +113,19 @@ let AttackMenu = () => {
                                     Attack
                                 </a>
                             </div>
+                        ))}
+                    </div>
+
+                    {/* Pagination Controls */}
+                    <div className="pagination-container">
+                        {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                            <button
+                                key={page}
+                                onClick={() => handlePageChange(page)}
+                                className={`pagination-button ${page === currentPage ? 'active' : ''}`}
+                            >
+                                {page}
+                            </button>
                         ))}
                     </div>
                 </div>
