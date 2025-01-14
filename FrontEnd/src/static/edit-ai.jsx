@@ -85,7 +85,7 @@ let EditAi = () => {
             <Navbar />
             <h2>Edit AI</h2>
             <div id="edit-ai">
-                <div className="ai-card">
+                                <div className="ai-card">
                     <h3>{ai.name}</h3>
                     <p><strong>Creator:</strong> {ai.creator}</p>
 
