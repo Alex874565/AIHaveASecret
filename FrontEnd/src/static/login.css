@@ -1,19 +1,20 @@
 #login-page {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #2a2a2a; /* Dark background similar to chat component */
-    padding: 20px;
-    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
 
     & .content-wrapper {
-        color: white; /* White text for contrast */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding-top: 70px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    & #login {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -24,7 +25,7 @@
         background-color: #333; /* Dark background for the form */
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
-        padding: 0;
+        padding: 20px;
         margin: 20px;
     }
 

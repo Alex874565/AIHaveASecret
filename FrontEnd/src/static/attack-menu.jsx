@@ -53,49 +53,54 @@ let AttackMenu = () => {
 
     // Fetch data on component mount
     useEffect(() => {
-        getAis();
+        if(localStorage.getItem('user')) {
+            getAis();
+        }
     }, []);
 
     if (localStorage.getItem('user')) {
         return (
             <div id="attack-menu-page">
                 <Navbar />
-                <h2>Attack Menu</h2>
 
-                {/* Search and Sort Controls */}
-                <div className="search-sort-container">
-                    <input
-                        type="text"
-                        placeholder="Search by name or creator"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="search-input"
-                    />
-                    <select
-                        value={sortCondition}
-                        onChange={(e) => setSortCondition(e.target.value)}
-                        className="sort-select"
-                    >
-                        <option value="none">Oldest to newest</option>
-                        <option value="most-attacks">Most Attacks</option>
-                        <option value="highest-success">Highest Success</option>
-                    </select>
-                </div>
+                <div className={"content-wrapper"}>
+                    <h2>Attack Menu</h2>
 
-                {/* Attack Menu */}
-                <div id="attack-menu">
-                    {sortedAis.map((ai, index) => (
-                        <div key={ai.id || index} className="ai-card">
-                            <h3>{ai.name}</h3>
-                            <h3>{ai.creator}</h3>
-                            <p>Description: {ai.description}</p>
-                            <p>Attacks: {ai.total_attacks}</p>
-                            <p>Successful attacks: {ai.successful_attacks}</p>
-                            <a id="attack-button" href={`/attack-custom-ai/${ai.creator}/${ai.name}`}>
-                                Attack
-                            </a>
-                        </div>
-                    ))}
+                    {/* Search and Sort Controls */}
+                    <div className="search-sort-container">
+                        <input
+                            type="text"
+                            placeholder="Search by name or creator"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="search-input"
+                        />
+                        <select
+                            value={sortCondition}
+                            onChange={(e) => setSortCondition(e.target.value)}
+                            className="sort-select"
+                        >
+                            <option value="none">Oldest to newest</option>
+                            <option value="most-attacks">Most Attacks</option>
+                            <option value="highest-success">Highest Success</option>
+                        </select>
+                    </div>
+
+                    {/* Attack Menu */}
+                    <div id="attack-menu">
+                        {sortedAis.map((ai, index) => (
+                            <div key={ai.id || index} className="ai-card">
+                                <h3>{ai.name}</h3>
+                                <h3>{ai.creator}</h3>
+                                <p>Description: {ai.description}</p>
+                                <p>Attacks: {ai.total_attacks}</p>
+                                <p>Successful attacks: {ai.successful_attacks}</p>
+                                <a id="attack-button" href={`/attack-custom-ai/${ai.creator}/${ai.name}`}>
+                                    Attack
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         );

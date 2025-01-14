@@ -132,19 +132,21 @@ var Register = () => {
             <Loader />
             <Navbar />
             <div className={"content-wrapper"}>
-                <h2>Register</h2>
-                <div id={"auth-form"}>
-                    <input type="text" name="username" placeholder="Username" />
-                    <input type="text" name="email" placeholder="Email" />
-                    <input type="password" name="password" placeholder="Password" />
-                    <button onClick={validateFields}>Register</button>
+                <div id={"register"}>
+                    <h2>Register</h2>
+                    <div id={"auth-form"}>
+                        <input type="text" name="username" placeholder="Username" />
+                        <input type="text" name="email" placeholder="Email" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <button onClick={validateFields}>Register</button>
+                    </div>
+                    <div id={"auth-errors"}></div>
+                    <div id={"code-form"}>
+                        <input type="text" name="code" placeholder="Code" />
+                        <button onClick={checkCode}>Submit</button>
+                    </div>
+                    <a id={"login-btn"} href={"/login"}>Already have an account? Login</a>
                 </div>
-                <div id={"auth-errors"}></div>
-                <div id={"code-form"}>
-                    <input type="text" name="code" placeholder="Code" />
-                    <button onClick={checkCode}>Submit</button>
-                </div>
-                <a id={"login-btn"} href={"/login"}>Already have an account? Login</a>
             </div>
         </div>
     );

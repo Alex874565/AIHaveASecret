@@ -4,7 +4,6 @@
     align-items: safe center;
     justify-content: safe center;
     margin-top: 60px;
-    overflow-y: scroll;
     height: 100%;
 
     & h2 {

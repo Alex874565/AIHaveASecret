@@ -74,44 +74,46 @@ let Leaderboard = () => {
     const displayedUsers = users.slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
 
     return (
-        <div id="page-container">
+        <div id="leaderboard-page">
             <Navbar />
-            <div id="leaderboard-page">
-                <h2>Leaderboard</h2>
-                <table style={{color: 'black'}}>
-                    <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th onClick={() => handleSort('name')}>Name{renderSortArrow('name')}</th>
-                        <th onClick={() => handleSort('ais')}>AIs{renderSortArrow('ais')}</th>
-                        <th onClick={() => handleSort('trophies')}>Trophies{renderSortArrow('trophies')}</th>
-                        <th onClick={() => handleSort('attack_trophies')}>Attack Trophies{renderSortArrow('attack_trophies')}</th>
-                        <th onClick={() => handleSort('defense_trophies')}>Defense Trophies{renderSortArrow('defense_trophies')}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {displayedUsers.map((user, index) => (
-                        <tr key={user.id || index}>
-                            <td>{(currentPage - 1) * usersPerPage + index + 1}</td>
-                            <td>{user.name}</td>
-                            <td>{user.ais.length}</td>
-                            <td>{user.trophies}</td>
-                            <td>{user.attack_trophies}</td>
-                            <td>{user.defense_trophies}</td>
+            <div className="content-wrapper">
+                <div id={"leaderboard"}>
+                    <h2>Leaderboard</h2>
+                    <table style={{color: 'black'}}>
+                        <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th onClick={() => handleSort('name')}>Name{renderSortArrow('name')}</th>
+                            <th onClick={() => handleSort('ais')}>AIs{renderSortArrow('ais')}</th>
+                            <th onClick={() => handleSort('trophies')}>Trophies{renderSortArrow('trophies')}</th>
+                            <th onClick={() => handleSort('attack_trophies')}>Attack Trophies{renderSortArrow('attack_trophies')}</th>
+                            <th onClick={() => handleSort('defense_trophies')}>Defense Trophies{renderSortArrow('defense_trophies')}</th>
                         </tr>
-                    ))}
-                    </tbody>
-                </table>
-                <div className="pagination">
-                    {Array.from({ length: totalPages }, (_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handlePageChange(index + 1)}
-                            className={currentPage === index + 1 ? 'active' : ''}
-                        >
-                            {index + 1}
-                        </button>
-                    ))}
+                        </thead>
+                        <tbody>
+                        {displayedUsers.map((user, index) => (
+                            <tr key={user.id || index}>
+                                <td>{(currentPage - 1) * usersPerPage + index + 1}</td>
+                                <td>{user.name}</td>
+                                <td>{user.ais.length}</td>
+                                <td>{user.trophies}</td>
+                                <td>{user.attack_trophies}</td>
+                                <td>{user.defense_trophies}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                    <div className="pagination">
+                        {Array.from({ length: totalPages }, (_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handlePageChange(index + 1)}
+                                className={currentPage === index + 1 ? 'active' : ''}
+                            >
+                                {index + 1}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

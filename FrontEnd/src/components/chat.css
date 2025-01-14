@@ -89,7 +89,7 @@
 
 @media(max-width: 768px) {
     .chat-container-wrapper {
-        max-width: 80%;
+        /*max-width: 80%;*/
 
         & textarea {
             height: 20px;

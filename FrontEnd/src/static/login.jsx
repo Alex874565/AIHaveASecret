@@ -37,14 +37,16 @@ var Login = () => {
         <div id={"login-page"}>
             <Navbar />
             <div className="content-wrapper">
+                <div id={"login"}>
                 <h2>Login</h2>
-                <div id="auth-form">
-                    <input type="text" name="email" placeholder="Email"/>
-                    <input type="password" name="password" placeholder="Password"/>
-                    <button onClick={loginApiCall} value={"Login"}>Login</button>
+                    <div id="auth-form">
+                        <input type="text" name="email" placeholder="Email"/>
+                        <input type="password" name="password" placeholder="Password"/>
+                        <button onClick={loginApiCall} value={"Login"}>Login</button>
+                    </div>
+                    <div id={"auth-errors"}></div>
+                    <a id={"register-btn"} href={"/register"}>Don't have an account yet? Register</a>
                 </div>
-                <div id={"auth-errors"}></div>
-                <a id={"register-btn"} href={"/register"}>Don't have an account yet? Register</a>
             </div>
         </div>
     )

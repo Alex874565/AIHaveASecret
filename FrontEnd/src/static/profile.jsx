@@ -58,6 +58,7 @@ let Profile = () => {
       });
     if (res2.status === 200) {
       alert("Password changed");
+      closeChangePassword();
       window.location.href = "/profile";
     }
   };
@@ -66,10 +67,12 @@ let Profile = () => {
     return (
       <div id={"profile-page"}>
           <Navbar />
-          <div id="not-logged-in">
-            <h2>Profile</h2>
-            <h3>You are not logged in</h3>
-            <a href={"/login"}>Login</a>
+          <div className={"content-wrapper"}>
+            <div id="not-logged-in">
+                <h2>Profile</h2>
+                <h3>You are not logged in</h3>
+                    <a href={"/login"}>Login</a>
+            </div>
           </div>
       </div>
     );
@@ -79,44 +82,45 @@ let Profile = () => {
             {/* Navbar Component placed outside of the content */}
             <Navbar />
         
-            {/* Main Profile Section */}
-            <div id="profile-content">
-                <h2>Profile</h2>
-                <h3>Username: {JSON.parse(localStorage.getItem("user")).name}</h3>
-                <h3>Email: {JSON.parse(localStorage.getItem("user")).email}</h3>
-                <h3>Attacks: {JSON.parse(localStorage.getItem("user")).attacks}</h3>
-                <h3>Trophies: {JSON.parse(localStorage.getItem("user")).trophies}</h3>
-                <h3>Attack Trophies: {JSON.parse(localStorage.getItem("user")).attack_trophies}</h3>
-                <h3>Defense Trophies: {JSON.parse(localStorage.getItem("user")).defense_trophies}</h3>
+            <div className={"content-wrapper"}>
+                <div id="profile-content">
+                    <h2>Profile</h2>
+                    <h3>Username: {JSON.parse(localStorage.getItem("user")).name}</h3>
+                    <h3>Email: {JSON.parse(localStorage.getItem("user")).email}</h3>
+                    <h3>Attacks: {JSON.parse(localStorage.getItem("user")).attacks}</h3>
+                    <h3>Trophies: {JSON.parse(localStorage.getItem("user")).trophies}</h3>
+                    <h3>Attack Trophies: {JSON.parse(localStorage.getItem("user")).attack_trophies}</h3>
+                    <h3>Defense Trophies: {JSON.parse(localStorage.getItem("user")).defense_trophies}</h3>
 
-                {/* Change Password Section */}
-                <div id="change-password" style={{ display: "none" }}>
-                <input type="password" name="old-password" placeholder="Old Password" />
-                <input type="password" name="new-password" placeholder="New Password" />
-                <input type="password" name="confirm-password" placeholder="Confirm Password" />
-                <div id="password-errors"></div>
-                <button className="change-password-btn" onClick={changePasswordApiCall}>
+                    {/* Change Password Section */}
+                    <div id="change-password" style={{ display: "none" }}>
+                    <input type="password" name="old-password" placeholder="Old Password" />
+                    <input type="password" name="new-password" placeholder="New Password" />
+                    <input type="password" name="confirm-password" placeholder="Confirm Password" />
+                    <div id="password-errors"></div>
+                    <button className="change-password-btn" onClick={changePasswordApiCall}>
+                        Change Password
+                    </button>
+                    </div>
+
+                    {/* Buttons for changing password or logging out */}
+                    <button id="open-change-password" onClick={openChangePassword}>
                     Change Password
-                </button>
+                    </button>
+                    <button id="close-change-password" style={{display: "none"}} onClick={closeChangePassword}>
+                    Cancel
+                    </button>
+                    <button
+                    onClick={() => {
+                        if(confirm("Are you sure you want to log out?")) {
+                            localStorage.removeItem("user");
+                            window.location.href = "/login";
+                        }
+                    }}
+                    >
+                    Logout
+                    </button>
                 </div>
-
-                {/* Buttons for changing password or logging out */}
-                <button id="open-change-password" onClick={openChangePassword}>
-                Change Password
-                </button>
-                <button id="close-change-password" onClick={closeChangePassword}>
-                Cancel
-                </button>
-                <button
-                onClick={() => {
-                    if(confirm("Are you sure you want to log out?")) {
-                        localStorage.removeItem("user");
-                        window.location.href = "/login";
-                    }
-                }}
-                >
-                Logout
-                </button>
             </div>
         </div>
     );

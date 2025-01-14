@@ -2,14 +2,18 @@
 #profile-page {
     margin: 0;
     height: 100%;
-    align-items: center;
-    background-color: #2a2a2a;
-    background-image: url("https://wallpapers.com/images/hd/1600-x-900-black-tvnmhs4ar0dmm3w9.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-y: scroll;
 
-    /* Error Feedback */
+    & .content-wrapper {
+        height: 100%;
+        width: 100%;
+        padding-top: 70px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     & #password-errors {
         color: red;
@@ -121,6 +125,7 @@
     #not-logged-in {
         text-align: center;
         color: white;
+        width: 80%;
         max-width: 600px;
         background-color: #333;
         padding: 20px;
